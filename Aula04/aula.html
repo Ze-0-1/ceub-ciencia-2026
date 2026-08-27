@@ -66,7 +66,7 @@
 
       .campo-grupo{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr ;
         gap: 20px 40px;
         margin-bottom: 20px; 
       }
@@ -194,6 +194,12 @@
         border-radius: 5px;
       }
 
+      .campo-cep{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px 40px;
+        margin-bottom: 20px; 
+      }
     </style>
 </head>
 <body>
@@ -240,16 +246,7 @@
         </div>
 
         
-        <div class="campo-grupo">
-          <div class="campo">
-            <label for="CPF">CPF</label>
-            <input type="text" id="CPF" name="CPF" maxlength="11" placeholder="000.000.000-00"> 
-          </div>
-          <div class="campo">
-            <label for="CEP">CEP</label>
-            <input type="text" id="CEP" name="CEP" maxlength="8" placeholder="00000-000">
-          </div>
-        </div>
+        
   
       </fieldset>
   
@@ -301,6 +298,58 @@
           </tr>
         </table>
       </fieldset>
+
+      <fieldset>
+        <legend><strong>Endereço</strong></legend>
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="logradouro">logradouro</label>
+            <input type="text" id="logradouro" name="logradouro"> 
+          </div>
+          <div class="campo">
+            <label for="numero">número</label>
+            <input type="text" id="numero" name="numero" placeholder="Ex: 123">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="complemento">complemento</label>
+            <input type="text" id="complemento" name="complemento"> 
+          </div>
+          <div class="campo">
+            <label for="bairro">bairro</label>
+            <input type="text" id="bairro" name="bairro">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <div class="campo">
+            <label for="complemento">complemento</label>
+            <input type="text" id="complemento" name="complemento"> 
+          </div>
+          
+          <div class="campo">
+            <label for="bairro">bairro</label>
+            <input type="text" id="bairro" name="bairro">
+          </div>
+        </div>
+
+        <div class="campo-cep">
+          <div class="campo">
+            <label for="cidade">cidade</label>
+            <input type="text" id="cidade" name="cidade"> 
+          </div>
+          <div class="campo">
+            <label for="estado">estado</label>
+            <input type="text" id="estado" name="estado"> 
+          </div>
+          <div class="campo">
+            <label for="codigo_ibge">código ibge</label>
+            <input type="text" id="codigo_ibge" name="codigo_ibge">
+          </div>
+        </div>
+      </fieldset>
   
       <div class="botoes">
         <input type="submit" value="Enviar Formulário">
@@ -311,3 +360,4 @@
   
   </body>
 </html>
+
