@@ -369,6 +369,25 @@
     this.value = valor;
   })
 
+  const campoCpf = document.addEventListener('input', function () {
+    let valor = this.value.replace(/\D/g, '');
+
+    if (valor.length > 3) {
+        valor = valor.slice(0, 3) + '.' + valor.slice(3);
+    }
+
+    if (valor.length > 7) {
+        valor = valor.slice(0, 7) + '.' + valor.slice(7);
+    }
+
+    if (valor.length > 11) {
+        valor = valor.slice(0, 11) + '-' + valor.slice(11, 13);
+    }
+
+    this.value = valor;
+});
+
+
 </script>
 
 </html>
