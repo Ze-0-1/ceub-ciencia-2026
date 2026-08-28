@@ -198,8 +198,20 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 20px 40px;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
       }
+
+      .campo-lingua{
+        padding: 10px 14px;
+        margin: 20px 0px 0px;
+        background-color: #ccdff3;
+        border-style: dashed;
+        border-radius: 10px;
+        width: 200px;
+        height: 150px;
+      }
+
+     .lingua
     </style>
 </head>
 <body>
@@ -265,6 +277,15 @@
                 <option value="4ano">4º ano</option>
                 <option value="5ano">5º ano</option>
               </select>
+
+            <div class="campo-lingua">
+              <strong>segunda lingua</strong>
+              <input type="radio" name="lingua" id="inlges" value="inlges">
+              <label for="ingles">Ingles</label><br>
+              <input type="radio" name="lingua" id="espanhol" value="espanhol">
+              <label for="espanhol">Epanhol</label>
+            </div>
+
             </td>
   
             <td>
@@ -350,7 +371,7 @@
           </div>
         </div>
       </fieldset>
-  
+
       <div class="botoes">
         <input type="submit" value="Enviar Formulário">
         <input type="reset" value="Limpar Campos">
@@ -371,19 +392,15 @@
 
   const campoCpf = document.addEventListener('input', function () {
     let valor = this.value.replace(/\D/g, '');
-
     if (valor.length > 3) {
         valor = valor.slice(0, 3) + '.' + valor.slice(3);
     }
-
     if (valor.length > 7) {
         valor = valor.slice(0, 7) + '.' + valor.slice(7);
     }
-
     if (valor.length > 11) {
         valor = valor.slice(0, 11) + '-' + valor.slice(11, 13);
     }
-
     this.value = valor;
 });
 
