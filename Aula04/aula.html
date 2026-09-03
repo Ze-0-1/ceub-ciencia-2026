@@ -60,6 +60,43 @@
       </div>
     </div>
 
+    
+    <div class="campo-grupo">
+      <div class="campo">
+        <label for="matricula">matricula</label>
+        <input type="text" id="matricula" name="matricula" maxlength="11" placeholder="000.000.000-00">
+      </div>
+      <div class="campo">
+        <label for="idade">idade</label>
+        <input type="text" id="idade" name="idade">
+      </div>
+    </div>
+
+    <div class="campo-grupo">
+      <div class="campo">
+        <strong>ESTADO</strong>
+          <select id="estado" name="estado">
+            <option value="pre-escolar">Selecione o estado</option>
+            <option value="1ano">1º ano</option>
+            <option value="2ano">2º ano</option>
+            <option value="3ano">3º ano</option>
+            <option value="4ano">4º ano</option>
+            <option value="5ano">5º ano</option>
+          </select>
+      </div>
+      <div class="campo">
+        <strong>CIDADE</strong>
+          <select id="cidade" name="cidade">
+            <option value="pre-escolar">Selecione a cidade</option>
+            <option value="1ano">1º ano</option>
+            <option value="2ano">2º ano</option>
+            <option value="3ano">3º ano</option>
+            <option value="4ano">4º ano</option>
+            <option value="5ano">5º ano</option>
+          </select>
+      </div>
+    </div>
+
   </fieldset>
 
   <fieldset>
@@ -201,5 +238,32 @@
         }
         this.value = valor;
     });
+
+    const campoNascimento = document.getElementById('nascimento');
+
+campoNascimento.addEventListener('input', function () {
+
+    let nascimento = new Date(this.value);
+    let hoje = new Date();
+
+    let idade = hoje.getFullYear() - nascimento.getFullYear();
+
+
+    let mesAtual = hoje.getMonth();
+    let diaAtual = hoje.getDate();
+
+    let mesNascimento = nascimento.getMonth();
+    let diaNascimento = nascimento.getDate();
+
+    if (
+        mesAtual < mesNascimento ||
+        (mesAtual === mesNascimento && diaAtual < diaNascimento)
+    ) {
+        idade--;
+    }
+
+    document.getElementById("idade").value = idade;
+});
+
 </script>
 </html>
